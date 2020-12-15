@@ -1,0 +1,302 @@
+$base-color: #6C6C6F;
+$main-color: #256BE6;
+$bg-color: #123D88;
+
+@mixin basic-inner{
+  width: 92%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@mixin basic-flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ベース
+---------------------------*/
+body{
+  color: $base-color;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: (28/16);
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/*common*/
+.co{
+  &__inner{
+    @include basic-inner;
+  }
+
+  &__pa{
+    padding: 80px 0;
+    &Sm{
+      padding: 40px 0;
+    }
+  }
+
+  &__textCenter{
+    text-align: center;
+  }
+
+  &__textLeft{
+    text-align: left;
+  }
+
+  &__textRight{
+    text-align: right;
+  }
+}
+
+/*payment*/
+.payment{
+  &__image{
+    width: 50.4%;
+  }
+
+  &__info{
+    width: 42.7%;
+  }
+}
+
+/* header */
+.header{
+  padding: 30px 0;
+  background-color: $bg-color;
+
+  &__inner{
+    @include basic-inner;
+    @include basic-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title{
+    line-height: 1;
+  }
+}
+
+/*backgroundcolor*/
+.bg{
+  &__blue{
+    color: #fff;
+    background-color: #123D88;
+  }
+
+  &__gray{
+    background-color: #F7FAFF;
+  }
+}
+
+/*flex*/
+.flex{
+  @include basic-flex;
+
+  &__justifyBetween{
+    justify-content: space-between;
+  }
+
+  &__justifyEvenly{
+    justify-content: space-evenly;
+  }
+
+  &__alignCenter{
+    align-items: center;
+  }
+}
+
+/* g-nav */
+.g-nav{
+
+  &__list{
+    @include basic-flex;
+  }
+
+  &__item{
+    margin-left: 30px;
+  }
+
+  &__link{
+    color: #fff;
+  }
+}
+
+/* card */
+.card{
+  border-radius: 5px;
+  background-color: #fff;
+  .speciality__list &{
+    width: 27.3%;
+  }
+  .forth__list &{
+    width: 23.7%;
+    padding: 25px 28px;
+  }
+
+  &__icon{
+    margin-bottom: 15px;
+    .flex > &{
+        margin-bottom: 0;
+        margin-right: 25px;
+    }
+  }
+
+  &__title{
+    color: #2F2F35;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  &__shadow{
+    padding: 50px 25px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+  }
+
+  &__info{
+    width: 42.7%;
+    .flex > &{
+      flex: 1;
+    }
+  }
+
+  &__list &{
+      width: 27.3%;
+  }
+
+  &__border{
+      border: 1px solid #F1F1F1;
+  }
+}
+
+.forth__list > .card__blue{
+  background-color: #256BE6;
+}
+
+.white__title{
+  color: #FFFFFF;
+}
+
+/*about*/
+.choose__list .card{
+  width: 48.7%;
+  margin-bottom: 30px;
+}
+
+/*btn*/
+.btn{
+  display: inline-block;
+  width: 220px;
+  margin-top: 50px;
+  padding: 12px 0;
+  background-color: #256BE6;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+
+  &__outline{
+  border: 1px solid #fff;
+  background-color: transparent;
+  }
+
+  &__info{
+      background-color: #2DBE61;
+      box-shadow: 0 5px 10px rgba(22,132,61,0.1);
+  }
+
+  &__2{
+  display: inline-block;
+  width: 230px;
+  padding: 12px 0;
+  background-color: #F87624;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+}
+
+/* media */
+.media{
+  &__title{
+    margin-bottom: 20px;
+    color: #262934;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.33;
+      .bg__blue > &{
+      color: #fff;
+    }
+  }
+
+  &__subTitle{
+    margin-bottom: 15px;
+    color: #256BE6;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  &__lead{
+    max-width: 770px;
+    margin: 0 auto 80px;
+  }
+}
+
+/* wedo */
+.wedo{
+  &__list .card{
+    width: 27.3%;
+  }
+}
+
+/* features */
+.features{
+
+  &__inner{
+    @include basic-inner;
+    @include basic-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info{
+    width: 42.7%;
+    .flex > &{
+      flex: 1;
+    }
+  }
+
+  &__list{
+    @include basic-flex;
+    justify-content: space-between;
+    width: 50.4%;
+  }
+
+  &__card{
+    width: 44%;
+    margin: 40px 0;
+  }
+}
+
+/*footer*/
+.footer{
+  padding: 30px 0;
+  font-size: 18px;
+
+  &__inner{
+    @include basic-inner;
+  }
+}
